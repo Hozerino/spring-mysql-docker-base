@@ -1,0 +1,1 @@
+GRANT ALL PRIVILEGES ON dockerpoc_db.* TO 'dockerpoc'@'%' WITH GRANT OPTION;
