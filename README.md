@@ -1,6 +1,35 @@
+# Spring MySQL Docker | Base Project
+Base project used to start SpringBoot+MySQL+Docker+Docker-Compose applications.
+It contains `.bat` scripts to make the creation of containers easier for Windows users.
+Will soon add `.sh` scripts as well.  
+  
+## Useful commands:
+### - Running docker-compose MySQL only
+```
+docker-compose up db
+```
 
-docker build . --tag dockerpoc
+### - Build project and prepare database (consider having the database docker up)
+```
+gradlew clean build flywayRepair flywayMigrate
+```
 
-docker system prune
+### - Build docker project image
+```
+docker build . --no-cache --tag dockerpoc
+```
 
-docker run -p 80:8080 -it --rm dockerpoc:latest"# spring-mysql-docker-base" 
+### - Prune untagged/unnamed docker images
+```
+docker system prune -f
+```
+
+### - Run application docker (without database)
+```
+docker run -p 80:8080 -it --rm dockerpoc:latest
+```
+
+### - Run whole docker-compose (database and application images)
+```
+docker-compose up --rm
+```
