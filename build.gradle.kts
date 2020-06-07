@@ -28,6 +28,7 @@ dependencies {
     runtimeOnly("mysql:mysql-connector-java")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa:2.3.0.RELEASE")
     implementation("org.flywaydb:flyway-core:6.4.3")
+    implementation("org.springframework.boot:spring-boot-starter-validation")
 }
 
 tasks.withType<Test> {

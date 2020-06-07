@@ -1,6 +1,6 @@
 package copps.dockerpoc.domain.model
 
-import copps.dockerpoc.rest.payload.TestPayload
+import copps.dockerpoc.rest.payload.TestResponse
 import javax.persistence.Column
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
@@ -22,5 +22,5 @@ data class TestEntity(
         @Column(name = "DES_MESSAGE")
         var message: String = ""
 ) {
-    fun toResponse() = TestPayload(this.code, this.message)
+    fun toResponse() = TestResponse(this.id!!, this.code, this.message)
 }

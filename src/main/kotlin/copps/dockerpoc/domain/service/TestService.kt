@@ -2,13 +2,13 @@ package copps.dockerpoc.domain.service
 
 import copps.dockerpoc.domain.model.TestEntity
 import copps.dockerpoc.domain.repository.TestRepository
-import copps.dockerpoc.domain.validator.TestEntityValidator
+import copps.dockerpoc.domain.validator.TestRequestValidator
 import org.springframework.stereotype.Service
 import java.util.*
 
 @Service
 class TestService(val testRepository: TestRepository,
-                  val validator: TestEntityValidator) {
+                  val validatorTest: TestRequestValidator) {
     fun searchByParams(code: String?, message: String?): List<TestEntity> =
             when {
                 // both are present
@@ -28,7 +28,6 @@ class TestService(val testRepository: TestRepository,
     fun getAll(): List<TestEntity> = testRepository.findAll().toList()
 
     fun create(test: TestEntity): TestEntity {
-        validator.validate(test)
         return testRepository.save(test)
     }
 }
