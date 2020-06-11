@@ -1,1 +1,0 @@
-G:\workspace\dockerpoc\build\classes\kotlin\main\copps\dockerpoc\DockerpocApplication.class;G:\workspace\dockerpoc\build\classes\kotlin\main\copps\dockerpoc\DockerpocApplicationKt.class;G:\workspace\dockerpoc\build\classes\kotlin\main\copps\dockerpoc\controller\TestController.class
