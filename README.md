@@ -23,8 +23,7 @@ docker build . --no-cache --tag dockerpoc
 ```
 docker system prune -f
 ```
-### - Clear database docker-compose container (you can check it with `
-docker volume ls`)
+### - Clear database docker-compose container (you can check it with `docker volume ls`)
 ```
 docker-compose down
 docker-compose rm
