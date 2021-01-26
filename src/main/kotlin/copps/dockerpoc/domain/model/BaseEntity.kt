@@ -1,6 +1,6 @@
 package copps.dockerpoc.domain.model
 
-import copps.dockerpoc.rest.payload.TestResponse
+import copps.dockerpoc.rest.payload.BaseEntityResponse
 import javax.persistence.Column
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
@@ -10,7 +10,7 @@ import javax.persistence.Table
 
 @Entity
 @Table(schema = "dockerpoc_db", name = "TEST_TABLE")
-data class TestEntity(
+data class BaseEntity(
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         @Column(name = "IDT_TEST")
@@ -22,5 +22,5 @@ data class TestEntity(
         @Column(name = "DES_MESSAGE")
         var message: String = ""
 ) {
-    fun toResponse() = TestResponse(this.id!!, this.code, this.message)
+    fun toResponse() = BaseEntityResponse(this.code, this.message)
 }

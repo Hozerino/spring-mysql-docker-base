@@ -1,0 +1,1 @@
+gradlew clean build & docker build . --no-cache --tag dockerpoc & docker system prune -f & docker-compose up --rm

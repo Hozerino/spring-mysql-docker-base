@@ -1,1 +1,0 @@
-docker run -p 80:8080 -it --rm dockerpoc:latest

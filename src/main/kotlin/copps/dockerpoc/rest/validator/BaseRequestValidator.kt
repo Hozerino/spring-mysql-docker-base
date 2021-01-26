@@ -1,17 +1,19 @@
-package copps.dockerpoc.domain.validator
+package copps.dockerpoc.rest.validator
 
 import copps.dockerpoc.domain.model.ErrorEntry
 import copps.dockerpoc.domain.model.ValidationException
-import copps.dockerpoc.rest.payload.TestRequest
+import copps.dockerpoc.rest.payload.BaseEntityRequest
 import org.springframework.stereotype.Component
 
+
+// TODO make this validator be used as an annotation instead of a method call
 @Component
-class TestRequestValidator : Validator<TestRequest> {
+class BaseRequestValidator : Validator<BaseEntityRequest> {
 
-    val CODE_MAX_SIZE = 32
-    val MESSAGE_MAX_SIZE = 255
+    private val CODE_MAX_SIZE = 32
+    private val MESSAGE_MAX_SIZE = 255
 
-    override fun validate(obj: TestRequest) {
+    override fun validate(obj: BaseEntityRequest) {
         val errors = mutableListOf<ErrorEntry>()
 
         // code validation

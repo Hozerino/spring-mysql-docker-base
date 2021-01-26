@@ -1,19 +1,18 @@
 package copps.dockerpoc.rest.payload
 
-import copps.dockerpoc.domain.model.TestEntity
+import copps.dockerpoc.domain.model.BaseEntity
 import javax.validation.constraints.NotBlank
 
-data class TestRequest(
+data class BaseEntityRequest(
         @NotBlank
         val code: String,
         @NotBlank
         val message: String
 ) {
-    fun toModel() = TestEntity(null, code, message)
+    fun toModel() = BaseEntity(null, code, message)
 }
 
-data class TestResponse(
-        val id: Long,
+data class BaseEntityResponse(
         val code: String,
         val message: String
-)
+) : GenericResponse

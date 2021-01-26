@@ -1,1 +1,0 @@
-gradlew clean build flywayRepair flywayMigrate & docker build . --no-cache --tag dockerpoc & docker system prune -f

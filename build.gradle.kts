@@ -16,19 +16,28 @@ repositories {
     mavenCentral()
 }
 
+val springBootVersion="2.3.0.RELEASE"
+
+//TODO add versions
 dependencies {
-    implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("org.springframework.boot:spring-boot-starter-web:$springBootVersion")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+
+    runtimeOnly("mysql:mysql-connector-java")
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa:$springBootVersion")
+    implementation("org.flywaydb:flyway-core:6.4.3")
+    implementation("org.springframework.boot:spring-boot-starter-validation")
+
+    testImplementation("org.hamcrest:hamcrest:2.1")
     testImplementation("org.springframework.boot:spring-boot-starter-test") {
         exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
     }
+    testImplementation("com.h2database:h2:1.4.200")
+    testImplementation("io.rest-assured:rest-assured:4.3.3")
 
-    runtimeOnly("mysql:mysql-connector-java")
-    implementation("org.springframework.boot:spring-boot-starter-data-jpa:2.3.0.RELEASE")
-    implementation("org.flywaydb:flyway-core:6.4.3")
-    implementation("org.springframework.boot:spring-boot-starter-validation")
+
 }
 
 tasks.withType<Test> {
